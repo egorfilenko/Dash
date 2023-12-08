@@ -47,7 +47,16 @@ app.layout = html.Div(children=[
         }
     }
 
-
+    # Круговая диаграмма
+    pie_chart = {
+        'data': [
+            {'labels': filtered_data['Марка автомобиля'], 'values': filtered_data['Общая стоимость (руб)'], 'type': 'pie'}
+        ],
+        'layout': {
+            'title': 'Круговая диаграмма'
+        }
+    }
+    
 # Запуск приложения
 if __name__ == '__main__':
     app.run_server(debug=True)
