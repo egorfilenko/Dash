@@ -57,6 +57,24 @@ app.layout = html.Div(children=[
         }
     }
     
+        # Таблица с данными
+    data_table = html.Div([
+    html.H3('Таблица'),
+    html.Table(
+        id='data-table',
+        children=[
+                html.Tr([
+                    html.Th(col) for col in filtered_data.columns
+                ]),
+            html.Tbody([
+                html.Tr([
+                    html.Td(filtered_data.iloc[i][col]) for col in filtered_data.columns
+                ]) for i in range(len(filtered_data))
+            ])
+        ]
+    )
+])
+    
 # Запуск приложения
 if __name__ == '__main__':
     app.run_server(debug=True)
