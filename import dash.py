@@ -37,6 +37,15 @@ app.layout = html.Div(children=[
 
 ])
 
+    # График временного ряда
+    time_series_chart = {
+        'data': [
+            {'x': filtered_data['Дата'], 'y': filtered_data['Общая стоимость (руб)'], 'type': 'line', 'name': 'Общая стоимость'}
+        ],
+        'layout': {
+            'title': 'График временного ряда'
+        }
+    }
 
 
 # Запуск приложения
